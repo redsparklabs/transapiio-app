@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: 
+  email: bweber@spinuplabs.com
+  name: Brent Weber
+  phone: 512-913-4098
+  company_name: SpinUp Labs
+  id: 1
+
+# column: value
+#
+two:
+  email: laura.stude@gmail.com
+  name: Laura Stude
+  phone: 314-591-5711
+  company_name: Transapi.io
+  id: 2
+#  column: value
