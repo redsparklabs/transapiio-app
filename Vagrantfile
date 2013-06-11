@@ -5,10 +5,6 @@ Vagrant::Config.run do |config|
 
   config.vm.forward_port 3000, 3000
 
-  config.vm.customize ["modifyvm", :id, "--natdnsproxy1", "off"]
-
-  config.vm.customize ["modifyvm", :id, "--memory", 1024]
-
   config.vm.provision :puppet,
     :manifests_path => 'puppet/manifests',
     :module_path    => 'puppet/modules',
