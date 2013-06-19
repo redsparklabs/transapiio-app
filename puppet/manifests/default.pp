@@ -50,7 +50,7 @@ class install_postgres {
   class { 'postgresql::server': }
 
   package { 'libpq-dev':
-    ensure => installed
+    ensure => latest
   }
 }
 class { 'install_postgres': }
@@ -100,7 +100,7 @@ exec { 'install_ruby':
   require => [ Package['libyaml-dev'], Exec['install_rvm'] ]
 }
 
-exec { 'set_default_ruby': 
+exec { 'set_default_ruby':
   command => "${as_vagrant} '${home}/.rvm/bin/rvm --fuzzy alias create default 2.0.0 && ${home}/.rvm/bin/rvm use default'",
   require => Exec['install_ruby']
 }

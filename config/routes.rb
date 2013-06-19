@@ -1,4 +1,7 @@
 Transapiio::Application.routes.draw do
+  resources :templates
+
+
   get "home/index"
 
   get "home/dashboard"

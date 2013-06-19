@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  subject: MyString
+  template_type: MyString
+  body: MyString
+  text_body: MyString
+  from: MyString
+  user_id: 1
+
+two:
+  name: MyString
+  subject: MyString
+  template_type: MyString
+  body: MyString
+  text_body: MyString
+  from: MyString
+  user_id: 1
