@@ -13,6 +13,12 @@ class TemplateTest < ActiveSupport::TestCase
   	assert !@template.errors[:name].empty?, @template.inspect
   end
 
+  test "name cannot have whitespace" do 
+    @template.name = 'welcome email'
+    assert !@template.save
+    assert @template.errors[:name].include?('is invalid'), @template.inspect
+  end
+
   test "subject is required" do
   	assert !@template.save
   	assert !@template.errors[:subject].empty?, @template.inspect

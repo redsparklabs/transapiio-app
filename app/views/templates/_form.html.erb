@@ -21,23 +21,22 @@
   </div>
   <div class="field">
     <%= f.label :template_type %><br />
-    <%= f.text_field :template_type %>
+    <%= f.select :template_type, @template_types %>
   </div>
   <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_field :body %>
+    <%= f.text_area :body %>
   </div>
   <div class="field">
     <%= f.label :text_body %><br />
-    <%= f.text_field :text_body %>
+    <%= f.text_area :text_body %>
   </div>
   <div class="field">
     <%= f.label :from %><br />
     <%= f.text_field :from %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+    <%= f.hidden_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

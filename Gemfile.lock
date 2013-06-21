@@ -95,6 +95,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (2.3.0)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -133,6 +134,7 @@ DEPENDENCIES
   phony_rails
   puma
   rails (= 3.2.13)
+  redcarpet
   sass-rails (~> 3.2.3)
   sqlite3
   twitter-bootstrap-rails

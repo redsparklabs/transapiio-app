@@ -1,8 +1,10 @@
 class TemplatesController < ApplicationController
+  before_filter :authenticate_user!
   # GET /templates
   # GET /templates.json
   def index
-    @templates = Template.all
+    #@templates = Template.all
+    @templates = Template.where(:user_id => current_user.id).all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +27,8 @@ class TemplatesController < ApplicationController
   # GET /templates/new.json
   def new
     @template = Template.new
+    @template.user_id = current_user.id
+    @template_types = ['welcome','password reset','order confirmation']
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +39,7 @@ class TemplatesController < ApplicationController
   # GET /templates/1/edit
   def edit
     @template = Template.find(params[:id])
+    @template_types = ['welcome','password reset','order confirmation']
   end
 
   # POST /templates
