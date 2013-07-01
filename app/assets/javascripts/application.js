@@ -13,4 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require_tree .
+//= require jquery-ui-1.10.2.custom.min
+//= require fullcalendar.min
+//= require bootbox.min
+
+// require_tree .
+
+//= require ace.min
+//= require ace-elements.min
+//= require additional-methods.min
+//= require jquery.tablesorter.min
+//= require jquery.dataTables.min
+//= require jquery.dataTables.bootstrap
+//= require jquery.gritter.min
+//= require jquery.slimscroll.min
+//= require jquery.easy-pie-chart.min
+//= require jquery.flot.min
+//= require jquery.flot.pie.min

@@ -9,5 +9,14 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ * require_tree .
+ *= require bootstrap-responsive.min
+ *= require bootstrap_and_overrides
+ *= require fullcalendar
+ *= require ace-ie.min
+ *= require ace.min
+ *= require ace-responsive.min
+ *= require ace-skins.min
+ *= require jquery.gritter
+ *= require transapiio
  */
