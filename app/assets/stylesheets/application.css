@@ -10,13 +10,13 @@
  *
  *= require_self
  * require_tree .
- *= require bootstrap-responsive.min
+ *= require bootstrap-responsive
  *= require bootstrap_and_overrides
  *= require fullcalendar
- *= require ace-ie.min
- *= require ace.min
- *= require ace-responsive.min
- *= require ace-skins.min
+ *= require ace
+ *= require ace-ie
+ *= require ace-responsive
+ *= require ace-skins
  *= require jquery.gritter
  *= require transapiio
  */
