@@ -12,6 +12,7 @@ gem 'phony_rails'
 group :development do
   gem 'puma'
   gem 'capistrano'
+  gem 'rvm-capistrano'
 end
 
 
