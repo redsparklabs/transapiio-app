@@ -1,16 +1,21 @@
 require "rvm/capistrano"
 require "bundler/capistrano" 
+
+set :stages, %w(production staging)
+
 set :use_sudo, false
 set :user, 'dev'
-set :domain, '192.241.211.105'
-set :applicationdir, "/home/dev/transapiio/"
+#set :domain, '192.241.211.105'
+#set :applicationdir, "/home/dev/transapiio/"
+#set :deploy_to, "/home/dev/transapiio/"
+#set :deploy_to, :applicationdir
 
-set :application, "AltruusApp"
-set :deploy_to, "/home/dev/transapiio/"
-set :repository,  "git@github.com:redsparklabs/transapiio-app.git"
+#set :application, "AltruusApp"
+
+#set :repository,  "git@github.com:redsparklabs/transapiio-app.git"
 set :scm, :git
 set :scm_verbose, true
-set :branch, "master"
+#set :branch, "master"
 
 #set :deploy_via, :remote_cache
 
@@ -20,7 +25,7 @@ default_run_options[:pty] = true
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-server "192.241.211.105", :app, :web, :db, :primary => true
+#server "192.241.211.105", :app, :web, :db, :primary => true
 
 #before "deploy:cold", 
 #    "deploy:install_bundler"
@@ -28,7 +33,8 @@ server "192.241.211.105", :app, :web, :db, :primary => true
 #task :install_bundler, :roles => :app do
 #    run "type -P bundle &>/dev/null || { gem install bundler --no-rdoc --no-ri; }"
 #end
-#after 'deploy:cold', 'deploy:create'
+#
+after 'deploy:cold', 'deploy:create'
 
 after 'deploy:update_code', 'deploy:migrate'
 
