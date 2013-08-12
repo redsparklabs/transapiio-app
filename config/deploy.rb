@@ -1,7 +1,9 @@
+require 'capistrano/ext/multistage'
 require "rvm/capistrano"
 require "bundler/capistrano" 
 
 set :stages, %w(production staging)
+set :default_stage, "staging"
 
 set :use_sudo, false
 set :user, 'dev'
