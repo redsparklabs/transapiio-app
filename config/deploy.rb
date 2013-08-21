@@ -1,9 +1,12 @@
-require 'capistrano/ext/multistage'
+
 require "rvm/capistrano"
 require "bundler/capistrano" 
 
 set :stages, %w(production staging)
 set :default_stage, "staging"
+
+require 'capistrano/ext/multistage'
+set :application, "Transapiio"
 
 set :use_sudo, false
 set :user, 'dev'
