@@ -18,5 +18,6 @@
  *= require ace-responsive
  *= require ace-skins
  *= require jquery.gritter
+ *= require markdown
  *= require transapiio
  */

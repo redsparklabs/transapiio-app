@@ -30,3 +30,7 @@
 //= require jquery.easy-pie-chart.min
 //= require jquery.flot.min
 //= require jquery.flot.pie.min
+//= require markdown.converter
+//= require markdown.sanitizer
+//= require markdown.editor
+//= require transapiio

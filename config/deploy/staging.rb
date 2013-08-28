@@ -1,5 +1,7 @@
 set :domain, '192.241.211.105'
 
+set :rails_env, "staging"
+
 role :app, domain
 role :web, domain
 role :db, domain, :primary => true
