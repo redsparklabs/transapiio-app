@@ -18,8 +18,20 @@ test:
   pool: 5
   timeout: 5000
 
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+staging:
+  adapter: postgresql
+  database: transapiio_staging
+  username: dev_database
+  password: TravisBrentLaura  
+  host: localhost
   pool: 5
-  timeout: 5000
+  encoding: unicode
+
+production:
+  adapter: postgresql
+  database: transapiio_production
+  username: dev_database
+  password: TravisBrentLaura  
+  host: localhost
+  pool: 5
+  encoding: unicode

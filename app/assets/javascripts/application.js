@@ -30,3 +30,11 @@
 //= require jquery.easy-pie-chart.min
 //= require jquery.flot.min
 //= require jquery.flot.pie.min
+//= require markdown.converter
+//= require markdown.sanitizer
+//= require markdown.editor
+//= require_tree ./angular/assets/
+//= require_tree ./angular/controllers/
+//= require_tree ./angular/services/
+
+//= require transapiio

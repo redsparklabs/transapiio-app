@@ -2,6 +2,8 @@ class Template < ActiveRecord::Base
 
   attr_accessible :body, :from, :name, :subject, :template_type, :text_body, :user_id
 
+  belongs_to :user
+
   validates :name,  presence: true,
                     format: /^[^ ]+$/
   validates :subject, presence: true

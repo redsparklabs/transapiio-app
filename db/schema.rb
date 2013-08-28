@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(:version => 20130619135456) do
     t.string   "name"
     t.string   "subject"
     t.string   "template_type"
-    t.string   "body"
-    t.string   "text_body"
+    t.text     "body"
+    t.text     "text_body"
     t.string   "from"
     t.integer  "user_id"
     t.datetime "created_at",    :null => false

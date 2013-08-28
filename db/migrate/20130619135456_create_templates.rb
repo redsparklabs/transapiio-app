@@ -4,8 +4,8 @@ class CreateTemplates < ActiveRecord::Migration
       t.string :name
       t.string :subject
       t.string :template_type
-      t.string :body
-      t.string :text_body
+      t.text :body
+      t.text :text_body
       t.string :from
       t.integer :user_id
 

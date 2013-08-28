@@ -1,6 +1,7 @@
-<%= form_for(@template) do |f| %>
+<div ng-controller="TemplateFormCtrl" ng-init="init(<%= @template.id %>)">
+  <%= form_for(@template, :html => { :class => 'form-horizontal'}) do |f| %>
   <% if @template.errors.any? %>
-    <div id="error_explanation">
+    <div class="row" id="error_explanation">
       <h2><%= pluralize(@template.errors.count, "error") %> prohibited this template from being saved:</h2>
 
       <ul>
@@ -11,34 +12,66 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :subject %><br />
-    <%= f.text_field :subject %>
+  <div class="control-group">
+    <%= f.label :subject, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :subject %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :template_type %><br />
-    <%= f.select :template_type, @template_types %>
+  <div class="control-group">
+    <%= f.label :template_type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :template_type, @template_types %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
+
+  <div class="control-group">
+    <%= f.label :body, :class => 'control-label' %>
+    <div class="controls">
+        <div id='wmd-button-bar'></div>
+        <%= f.text_area :body, :class => 'wmd-input', :cols => '20', :rows => '15', 'ng-model' => 'template.body' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :text_body %><br />
-    <%= f.text_area :text_body %>
+
+  <div class="control-group">
+    <label class="control-label">Preview</label>
+    <div class="controls" id="markdown-preview">
+      <div ng-bind-html-unsafe="template.body | markdown"></div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :from %><br />
-    <%= f.text_field :from %>
+
+  <div class="control-group">
+    <label class="control-label">HTML</label>
+    <div class="controls" id="html-preview">
+      <pre>{{template.body | markdown}}</pre>
+    </div>
   </div>
-  <div class="field">
-    <%= f.hidden_field :user_id %>
+
+  <div class="control-group">
+    <%= f.label :text_body, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :text_body, :class => 'autosize-transition', :rows => '15' %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="control-group">
+    <%= f.label :from, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :from %>
+    </div>
+  </div>
+  <%= f.hidden_field :user_id %>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>
+</div>

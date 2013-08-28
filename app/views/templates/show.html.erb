@@ -1,40 +1,15 @@
 <p id="notice"><%= notice %></p>
-
+<div ng-controller="TemplateFormCtrl" ng-init="init(<%= @template.id %>)">
+<h2><%= @template.name %></h2>
 <p>
-  <b>Name:</b>
-  <%= @template.name %>
+  <strong>From:</strong> <%= @template.from %><br />
+  <strong>Subject:</strong> <%= @template.subject %>
 </p>
-
+<hr />
 <p>
-  <b>Subject:</b>
-  <%= @template.subject %>
+  <div ng-bind-html-unsafe="template.body | markdown"></div>
 </p>
-
-<p>
-  <b>Template type:</b>
-  <%= @template.template_type %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @template.body %>
-</p>
-
-<p>
-  <b>Text body:</b>
-  <%= @template.text_body %>
-</p>
-
-<p>
-  <b>From:</b>
-  <%= @template.from %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @template.user_id %>
-</p>
-
+</div>
 
 <%= link_to 'Edit', edit_template_path(@template) %> |
 <%= link_to 'Back', templates_path %>

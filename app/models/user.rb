@@ -16,4 +16,6 @@ class User < ActiveRecord::Base
                     :phony_plausible => true
 
   validates :company_name, presence: true
+
+  has_many :templates
 end
