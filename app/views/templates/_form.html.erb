@@ -1,6 +1,7 @@
-<%= form_for(@template, :html => {:class => 'form-horizontal'}) do |f| %>
+<div ng-controller="TemplateFormCtrl" ng-init="init(<%= @template.id %>)">
+  <%= form_for(@template, :html => { :class => 'form-horizontal'}) do |f| %>
   <% if @template.errors.any? %>
-    <div id="error_explanation">
+    <div class="row" id="error_explanation">
       <h2><%= pluralize(@template.errors.count, "error") %> prohibited this template from being saved:</h2>
 
       <ul>
@@ -29,21 +30,36 @@
       <%= f.select :template_type, @template_types %>
     </div>
   </div>
+
   <div class="control-group">
     <%= f.label :body, :class => 'control-label' %>
     <div class="controls">
-      <div class='wmd-panel'>
         <div id='wmd-button-bar'></div>
-        <%= f.text_area :body, :class => 'wmd-input autosize-transition span6', :rows => '15' %>
-      </div>
+        <%= f.text_area :body, :class => 'wmd-input', :cols => '20', :rows => '15', 'ng-model' => 'template.body' %>
     </div>
   </div>
+
+  <div class="control-group">
+    <label class="control-label">Preview</label>
+    <div class="controls" id="markdown-preview">
+      <div ng-bind-html-unsafe="template.body | markdown"></div>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">HTML</label>
+    <div class="controls" id="html-preview">
+      <pre>{{template.body | markdown}}</pre>
+    </div>
+  </div>
+
   <div class="control-group">
     <%= f.label :text_body, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :text_body, :class => 'autosize-transition span6', :rows => '15' %>
+      <%= f.text_area :text_body, :class => 'autosize-transition', :rows => '15' %>
     </div>
   </div>
+
   <div class="control-group">
     <%= f.label :from, :class => 'control-label' %>
     <div class="controls">
@@ -58,3 +74,4 @@
     </div>
   </div>
 <% end %>
+</div>

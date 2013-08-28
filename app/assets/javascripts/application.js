@@ -33,4 +33,8 @@
 //= require markdown.converter
 //= require markdown.sanitizer
 //= require markdown.editor
+//= require_tree ./angular/assets/
+//= require_tree ./angular/controllers/
+//= require_tree ./angular/services/
+
 //= require transapiio

@@ -1,4 +1,10 @@
-var app = angular.module('transapiio',['ngResource']);
+var app = angular.module('transapiio',['ngResource']).
+  filter('markdown', function() {
+    return function(input) {
+      var converter = new Showdown.converter();
+      return converter.makeHtml(input);
+    };
+  });
 
 app.controller('templateCtrl', ["$scope","$http", function($scope,$http) {
 	
@@ -17,4 +23,25 @@ app.controller('templateCtrl', ["$scope","$http", function($scope,$http) {
 		});
 	};
 
+}]);
+
+app.controller('TemplateFormCtrl', ["$scope", "$http", function($scope,$http) {
+
+	$scope.template = '';
+	//var converter = new Showdown.converter();
+	
+	$scope.init = function(id) {
+		$scope.id = id;
+		$scope.getTemplate($scope.id);
+	};
+
+	$scope.getTemplate = function(id) {
+		$http.get('/templates/'+id).
+			success( function(data) {
+				$scope.template = data;
+		});
+	};
+
+	//$scope.template.preview = converter.makeHtml($scope.template.body);
+	
 }]);

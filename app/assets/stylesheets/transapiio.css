@@ -2,3 +2,8 @@
   padding-left: 50px;
   padding-right: 50px;
 }
+
+#markdown-preview, #html-preview {
+  border: solid 1px #CCC;
+  padding: 5px;
+}
