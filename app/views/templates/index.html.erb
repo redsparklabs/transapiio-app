@@ -6,8 +6,6 @@
       <th>Name</th>
       <th>Subject</th>
       <th>Template type</th>
-      <th>Body</th>
-      <th>Text body</th>
       <th>From</th>
       <th>User</th>
       <th></th>
@@ -22,10 +20,8 @@
       <td><%= template.name %></td>
       <td><%= template.subject %></td>
       <td><%= template.template_type %></td>
-      <td><%= template.body %></td>
-      <td><%= template.text_body %></td>
       <td><%= template.from %></td>
-      <td><%= template.user_id %></td>
+      <td><%= template.user.name %></td>
       <td><%= link_to 'Show', template %></td>
       <td><%= link_to 'Edit', edit_template_path(template) %></td>
       <td><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
